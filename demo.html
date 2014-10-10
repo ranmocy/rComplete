@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js"></script>
+    <style type="text/css">
+        body {
+            text-align: center;
+            width: 400px;
+            margin: auto;
+        }
+        #container {
+            position: relative;
+        }
+        #prompt {
+            position: absolute;
+            top: 0;
+            left: -100px;
+            font-family: sans-serif;
+        }
+
+        .complete-wrapper input, #prompt {
+            font-size: 20px;
+        }
+        .complete-dropdown {
+            top: 20px;
+        }
+        .complete-dropdown-item {
+            border: 1px black solid;
+        }
+        .complete-dropdown-item.hovered {
+            color: #dd2222;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>rComplete</h1>
+    <p>rComplete completes me, automatically.</p>
+
+    <div id="container">
+        <div id="prompt">I complete </div>
+    </div>
+
+    <script type="text/javascript">
+        var c = rComplete(document.getElementById('container'), {
+            placeholder: "Departure"
+        });
+        c.setOptions(["option1",
+                     "option2",
+                     "option3"]);
+    </script>
+</body>
+</html>
