@@ -12,14 +12,16 @@ Easy to use, easy to hack.
 
 [Development(9.2K)](https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.js)
 or
-[Production(4.3K)](https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.min.js)
+[Production(4.3K)](https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js)
+
+Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
 
 ## Usage
 
 Add to your HTML header:
 
 ```HTML
-<script type="text/javascript" src="https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js"></script>
 ```
 
 And enable auto complete:
