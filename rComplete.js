@@ -187,13 +187,8 @@
         },
         Render: function(realValue) {
             var token = input.value;
-            if (token === '') {
-                this.realValue = '';
-                this.value = config.placeholder;
-            } else {
-                this.realValue = realValue || '';
-                this.value = token + this.realValue.substring(token.length);
-            };
+            this.realValue = realValue || '';
+            this.value = token + this.realValue.substring(token.length);
         }
     });
 
@@ -202,6 +197,7 @@
         Match: function() {
             var self = this;
             var token = this.value;
+
             this.Matches = [];
             this.Options.forEach(function(opt) {
                 if (config.matcher(token, opt)) {
@@ -237,7 +233,7 @@
             dropdown.Hide();
         },
         hasVisibleHint: function() {
-            return this.value !== '' && this.notCompleted() && hint.isShow();
+            return this.notCompleted() && hint.isShow();
         },
         onchange: function() {
             this.Match();
@@ -247,6 +243,7 @@
             this.onchange();
         },
         onfocus: function() {
+            this.Match();
             this.Show();
         },
         onblur: function() {
