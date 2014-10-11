@@ -45,7 +45,6 @@
 
     // default configs
     var config = {
-        dropdownZIndex: 100,
         placeholder: "Placeholder",
         matcher: function(a, b) { return new RegExp("^" + a, "i").test(b); }
     };
@@ -60,10 +59,6 @@
     var wrapper = document.createElement('div').bindProperties({
         className: "complete-wrapper",
         style: {
-            border: '0',
-            margin: '0',
-            outline: '0',
-            padding: '0',
             position: 'relative'
         }
     });
@@ -77,12 +72,8 @@
         Matches: [],
         style: {
             position: 'relative',
-            width: '100%',
-            border: '0',
-            margin: '0',
-            outline: '0',
-            padding: '0',
-            verticalAlign: 'top',
+            width: "100%",
+            "vertical-align": "top",
             backgroundColor: 'transparent'
         }
     });
@@ -93,11 +84,7 @@
         value: config.placeholder,
         realValue: '',
         style: {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            boxShadow: 'none',
-            borderColor: 'transparent'
+            position: 'absolute'
         }
     });
 
@@ -105,10 +92,7 @@
         className: 'complete-dropdown',
         Index: 0,
         style: {
-            zIndex: config.dropdownZIndex,
-            display: 'none',
-            position: 'absolute',
-            cursor: 'default'
+            display: 'none'
         }
     });
 
