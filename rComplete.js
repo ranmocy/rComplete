@@ -175,7 +175,10 @@
             this.style.display = null;
         },
         Hide: function() {
-            if (this.realValue !== '') {
+            if (input.value === '') {
+                this.realValue = '';
+                this.value = config.placeholder;
+            } else {
                 this.style.display = 'none';
             };
         },
