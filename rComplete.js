@@ -330,12 +330,14 @@
 
         setOptions: function(options) {
             input.Options = options;
+            return this;
         },
         getOptions: function() {
             return input.Options;
         },
         setText: function(text) {
             input.Complete(text);
+            return this;
         },
         getText: function() {
             return input.value;
