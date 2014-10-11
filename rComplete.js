@@ -13,6 +13,18 @@
         Object.keys(functions).forEach(function(name) {
             self[name] = functions[name].bind(self);
         });
+        return this;
+    };
+    Object.prototype.bindProperties = function(properties) {
+        var self = this;
+        Object.keys(properties).forEach(function(name) {
+            if (properties[name].constructor === Object) { // it's a hash
+                self[name].bindProperties(properties[name]);
+            } else {
+                self[name] = properties[name];
+            };
+        });
+        return this;
     };
     HTMLElement.prototype.classes = function() {
         return this.className.split(/\s+/);
@@ -45,47 +57,60 @@
     };
 
     // create elements
-    var wrapper = document.createElement('div');
-    wrapper.className = "complete-wrapper";
-    wrapper.style.position = 'relative';
-    wrapper.style.border = '0';
-    wrapper.style.margin = '0';
-    wrapper.style.outline = '0';
-    wrapper.style.padding = '0';
+    var wrapper = document.createElement('div').bindProperties({
+        className: "complete-wrapper",
+        style: {
+            border: '0',
+            margin: '0',
+            outline: '0',
+            padding: '0',
+            position: 'relative'
+        }
+    });
 
-    var input = document.createElement('input');
-    input.className = "complete-input";
-    input.type = 'text';
-    input.value = '';
-    input.spellcheck = false;
-    input.style.position = 'absolute';
-    input.style.top = 0;
-    input.style.left = 0;
-    input.style.width = '100%';
-    input.style.border = '0';
-    input.style.margin = '0';
-    input.style.outline = '0';
-    input.style.padding = '0';
-    input.style.verticalAlign = 'top';
-    input.style.backgroundColor = 'transparent';
-    input.Options = [];
-    input.Matches = [];
+    var input = document.createElement('input').bindProperties({
+        className: "complete-input",
+        type: 'text',
+        value: '',
+        spellcheck: false,
+        Options: [],
+        Matches: [],
+        style: {
+            position: 'relative',
+            width: '100%',
+            border: '0',
+            margin: '0',
+            outline: '0',
+            padding: '0',
+            verticalAlign: 'top',
+            backgroundColor: 'transparent'
+        }
+    });
 
-    var hint = input.cloneNode();
-    hint.className = "complete-hint";
-    hint.disabled = true;
-    hint.value = config.placeholder;
-    hint.realValue = '';
-    hint.style.boxShadow = 'none';
-    hint.style.borderColor = 'transparent';
+    var hint = input.cloneNode().bindProperties({
+        className: "complete-hint",
+        disabled: true,
+        value: config.placeholder,
+        realValue: '',
+        style: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            boxShadow: 'none',
+            borderColor: 'transparent'
+        }
+    });
 
-    var dropdown = document.createElement('div');
-    dropdown.className = 'complete-dropdown';
-    dropdown.style.zIndex = config.dropdownZIndex;
-    dropdown.style.display = 'none'
-    dropdown.style.position = 'absolute';
-    dropdown.style.cursor = 'default';
-    dropdown.Index = 0;
+    var dropdown = document.createElement('div').bindProperties({
+        className: 'complete-dropdown',
+        Index: 0,
+        style: {
+            zIndex: config.dropdownZIndex,
+            display: 'none',
+            position: 'absolute',
+            cursor: 'default'
+        }
+    });
 
 
     // create methods
@@ -296,6 +321,7 @@
     wrapper.appendChild(dropdown);
     root.appendChild(wrapper);
 
+    // return the rComplete obj
     return {
         wrapper: wrapper,
         input: input,
