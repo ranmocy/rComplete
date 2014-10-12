@@ -22,7 +22,7 @@ Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
 Add to your HTML header:
 
 ```HTML
-<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.0.0/rComplete.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.1/rComplete.min.js"></script>
 ```
 
 And enable auto complete:
