@@ -106,7 +106,7 @@ rc.dropdown   // access to the dropdown node
 rc.on(name, callback) // bind CALLBACK on NAME event
 ```
 
-Available events:
+Available event names:
 
 * **complete**: when input element complete to one option
 * **change**: when input element changed
