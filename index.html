@@ -34,27 +34,64 @@
 <p>JavaScript Auto Complete, simple and beautiful.</p>
 
 <p>No dependency on any JavaScript library.
-Only <strong>4.3K</strong> for production!</p>
+Only <strong>4.1K</strong> for production!</p>
 
 <p>Easy to costumize style with CSS.</p>
 
 <p>Easy to use, easy to hack.</p>
 
-<p><a href="https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.js">Development(9.2K)</a>
-<a href="https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.min.js">Production(4.3K)</a></p>
+<p><a href="https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.js">Development(9.3K)</a>
+or
+<a href="https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js">Production(4.1K)</a></p>
+
+<p>Check out the <a href="http://complete.ranmocy.info/demo.html">Demo</a> here.</p>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Add to your HTML header:</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-HTML"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
 <p>And enable auto complete:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">));</span>
 <span class="nx">c</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">([</span><span class="s2">"option1"</span><span class="p">,</span> <span class="s2">"option2"</span><span class="p">,</span> <span class="s2">"option3"</span><span class="p">]);</span>
+</pre></div>
+
+<p>You may also wish that it looks pretty:</p>
+
+<div class="highlight highlight-CSS"><pre><span class="nc">.complete-hint</span><span class="o">,</span> <span class="nc">.complete-input</span><span class="o">,</span> <span class="nc">.complete-dropdown</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.complete-hint</span><span class="o">,</span> <span class="nc">.complete-input</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#888</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span>
+    <span class="k">outline</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0.3em</span> <span class="m">0.5em</span><span class="p">;</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.complete-dropdown</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#bbb</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.complete-dropdown-item</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#444</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0.3em</span> <span class="m">0.5em</span><span class="p">;</span>
+    <span class="k">cursor</span><span class="o">:</span> <span class="k">default</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.complete-dropdown-item</span><span class="o">+</span><span class="nc">.complete-dropdown-item</span> <span class="p">{</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#888</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.complete-dropdown-item.hovered</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#1E98FF</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
 <p>That's it!</p>
@@ -64,16 +101,13 @@ Only <strong>4.3K</strong> for production!</p>
 
 <p>You can pass in personal configs as:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">),</span> <span class="p">{</span>
-    <span class="nx">dropdownZIndex</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">complete_obj</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">),</span> <span class="p">{</span>
     <span class="nx">placeholder</span><span class="o">:</span> <span class="s2">"Placeholder"</span><span class="p">,</span>
     <span class="nx">matcher</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"^"</span> <span class="o">+</span> <span class="nx">a</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 
 <ul>
-<li>
-<strong>dropdownZIndex</strong>: z-index of dropdown list, default is 100.</li>
 <li>
 <strong>placeholder</strong>: placeholder when input is empty, default is "Placeholder".</li>
 <li>
@@ -92,6 +126,19 @@ Only <strong>4.3K</strong> for production!</p>
 <li>
 <strong>.complete-dropdown</strong>: where the dropdown options exists</li>
 </ul>
+
+<p>And manipulate with JavaScript:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">complete_obj</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>    <span class="c1">// set the options, OPTIONS is a array of strings</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">getOptions</span><span class="p">()</span>           <span class="c1">// returns the options</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">setText</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>          <span class="c1">// manually set the input text to TEXT</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">getText</span><span class="p">()</span>              <span class="c1">// returns the value of the input</span>
+
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">wrapper</span>    <span class="c1">// access to the wrapper node</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">input</span>      <span class="c1">// access to the input node</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">hint</span>       <span class="c1">// access to the hint node</span>
+<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">dropdown</span>   <span class="c1">// access to the dropdown node</span>
+</pre></div>
 
 <h2>
 <a name="dev" class="anchor" href="#dev"><span class="octicon octicon-link"></span></a>Dev</h2>
