@@ -29,19 +29,19 @@
       </header>
       <section>
         <h1>
-<a name="rcomplete-110" class="anchor" href="#rcomplete-110"><span class="octicon octicon-link"></span></a>rComplete 1.1.0</h1>
+<a name="rcomplete-111" class="anchor" href="#rcomplete-111"><span class="octicon octicon-link"></span></a>rComplete 1.1.1</h1>
 
 <p>JavaScript auto-complete library, simple and beautiful.</p>
 
 <p>Easy to use, easy to costumize, easy to hack.</p>
 
 <p>No dependency on any other library.
-Only <strong>4.1K</strong> for production!</p>
+Only <strong>4.6K</strong> for production!</p>
 
 <p>See
-<a href="https://raw.githubusercontent.com/ranmocy/rComplete/v1.1.0/rComplete.js">Development(9.3K)</a>
+<a href="https://raw.githubusercontent.com/ranmocy/rComplete/v1.1.1/rComplete.js">Development(11K)</a>
 or
-<a href="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.0/rComplete.min.js">Production(4.1K)</a></p>
+<a href="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.1/rComplete.min.js">Production(4.6K)</a></p>
 
 <h2>
 <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
@@ -58,8 +58,8 @@ or
 
 <p>And enable auto complete:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">));</span>
-<span class="nx">c</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">([</span><span class="s2">"option1"</span><span class="p">,</span> <span class="s2">"option2"</span><span class="p">,</span> <span class="s2">"option3"</span><span class="p">]);</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">rc</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">));</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">([</span><span class="s2">"option1"</span><span class="p">,</span> <span class="s2">"option2"</span><span class="p">,</span> <span class="s2">"option3"</span><span class="p">]);</span>
 </pre></div>
 
 <p>You may also wish that it looks pretty:</p>
@@ -103,7 +103,7 @@ or
 
 <p>You can pass in personal configs as:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">complete_obj</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">),</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">rc</span> <span class="o">=</span> <span class="nx">rComplete</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#container'</span><span class="p">),</span> <span class="p">{</span>
     <span class="nx">placeholder</span><span class="o">:</span> <span class="s2">"Placeholder"</span><span class="p">,</span>
     <span class="nx">matcher</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"^"</span> <span class="o">+</span> <span class="nx">a</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">});</span>
@@ -131,20 +131,20 @@ or
 
 <p>And manipulate with JavaScript:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">complete_obj</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>    <span class="c1">// set the options, OPTIONS is a array of strings</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">getOptions</span><span class="p">()</span>           <span class="c1">// returns the options</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">setText</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>          <span class="c1">// manually set the input text to TEXT</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">getText</span><span class="p">()</span>              <span class="c1">// returns the value of the input</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">rc</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>    <span class="c1">// set the options, OPTIONS is a array of strings</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">getOptions</span><span class="p">()</span>           <span class="c1">// returns the options</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">setText</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>          <span class="c1">// manually set the input text to TEXT</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">getText</span><span class="p">()</span>              <span class="c1">// returns the value of the input</span>
 
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">wrapper</span>    <span class="c1">// access to the wrapper node</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">input</span>      <span class="c1">// access to the input node</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">hint</span>       <span class="c1">// access to the hint node</span>
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">dropdown</span>   <span class="c1">// access to the dropdown node</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">wrapper</span>    <span class="c1">// access to the wrapper node</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">input</span>      <span class="c1">// access to the input node</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">hint</span>       <span class="c1">// access to the hint node</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">dropdown</span>   <span class="c1">// access to the dropdown node</span>
 
-<span class="nx">complete_obj</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="c1">// bind CALLBACK on NAME event</span>
+<span class="nx">rc</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="c1">// bind CALLBACK on NAME event</span>
 </pre></div>
 
-<p>Available events:</p>
+<p>Available event names:</p>
 
 <ul>
 <li>
