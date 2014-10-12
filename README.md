@@ -4,15 +4,15 @@ rComplete
 JavaScript Auto Complete, simple and beautiful.
 
 No dependency on any JavaScript library.
-Only **4.3K** for production!
+Only **4.1K** for production!
 
 Easy to costumize style with CSS.
 
 Easy to use, easy to hack.
 
-[Development(9.2K)](https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.js)
+[Development(9.3K)](https://raw.githubusercontent.com/ranmocy/rComplete/master/rComplete.js)
 or
-[Production(4.3K)](https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js)
+[Production(4.1K)](https://cdn.rawgit.com/ranmocy/rComplete/master/rComplete.min.js)
 
 Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
 
