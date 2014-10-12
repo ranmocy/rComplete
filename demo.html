@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.0/rComplete.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.1/rComplete.min.js"></script>
     <style type="text/css">
         body {
             text-align: center;
@@ -89,7 +89,7 @@
         function appendMessage (msg) {
             var div = document.getElementById("message");
             var item = document.createElement('div');
-            item.text = msg;
+            item.innerHTML = msg;
             div.appendChild(item);
         };
 
