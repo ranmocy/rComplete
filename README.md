@@ -1,18 +1,17 @@
-rComplete 1.0.0
+rComplete 1.1.0
 ===============
 
-JavaScript Auto Complete, simple and beautiful.
+JavaScript auto-complete library, simple and beautiful.
 
-No dependency on any JavaScript library.
+Easy to use, easy to costumize, easy to hack.
+
+No dependency on any other library.
 Only **4.1K** for production!
 
-Easy to costumize style with CSS.
-
-Easy to use, easy to hack.
-
-[Development(9.3K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.0.0/rComplete.js)
+See
+[Development(9.3K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.1.0/rComplete.js)
 or
-[Production(4.1K)](https://cdn.rawgit.com/ranmocy/rComplete/v1.0.0/rComplete.min.js)
+[Production(4.1K)](https://cdn.rawgit.com/ranmocy/rComplete/v1.1.0/rComplete.min.js)
 
 ## Demo
 
@@ -103,7 +102,16 @@ complete_obj.wrapper    // access to the wrapper node
 complete_obj.input      // access to the input node
 complete_obj.hint       // access to the hint node
 complete_obj.dropdown   // access to the dropdown node
+
+complete_obj.on(name, callback) // bind CALLBACK on NAME event
 ```
+
+Available events:
+
+* **complete**: when input element complete to one option
+* **change**: when input element changed
+* **focus**: when focus on input element
+* **leave**: when leave the input element
 
 ## Dev
 
