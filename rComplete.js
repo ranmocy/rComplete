@@ -224,11 +224,15 @@
                 dropdown.childNodes[0].Hover();
             };
         },
+        oncompleteCallback: function() {
+            // User defined function
+        },
         // complete input to TEXT
         Complete: function(text) {
             this.value = text;
             this.Match();
             this.Hide();
+            this.oncompleteCallback();
         },
         isCompleted: function() {
             return this.value === hint.value;
@@ -247,19 +251,31 @@
         hasVisibleHint: function() {
             return this.notCompleted() && hint.isShow();
         },
+        onchangeCallback: function() {
+            // User defined function
+        },
         onchange: function() {
             this.Match();
             this.Show();
+            this.onchangeCallback();
         },
         oninput: function() {
             this.onchange();
         },
+        onfocusCallback: function() {
+            // User defined function
+        },
         onfocus: function() {
             this.Match();
             this.Show();
+            this.onfocusCallback();
+        },
+        onblurCallback: function() {
+            // User defined function
         },
         onblur: function() {
             this.Hide();
+            this.onblurCallback();
         },
         onkeydown: function(event) {
             var keyCode = (event || window.event).keyCode;
@@ -325,6 +341,25 @@
         },
         getText: function() {
             return input.value;
+        },
+
+        on: function(name, callback) {
+            switch(name) {
+                case "complete":
+                    input.oncompleteCallback = callback;
+                    break;
+                case "change":
+                    input.onchangeCallback = callback;
+                    break;
+                case "focus":
+                    input.onfocusCallback = callback;
+                    break;
+                case "leave":
+                    input.onblurCallback = callback;
+                    break;
+                default:
+                    console.warn(name + " is not a vaid event name!");
+            }
         }
     };
 };
