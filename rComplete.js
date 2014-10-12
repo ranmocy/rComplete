@@ -73,7 +73,7 @@
         style: {
             position: 'relative',
             width: "100%",
-            "vertical-align": "top",
+            verticalAlign: "top",
             backgroundColor: 'transparent'
         }
     });
