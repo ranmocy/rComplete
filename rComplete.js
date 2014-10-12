@@ -360,6 +360,7 @@
                 default:
                     console.warn(name + " is not a vaid event name!");
             }
+            return this;
         }
     };
 };
