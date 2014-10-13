@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.0.0/rComplete.min.js"></script>
+    <title>rComplete Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.1/rComplete.min.js"></script>
+
     <style type="text/css">
         body {
             text-align: center;
@@ -60,6 +63,8 @@
         Try it.
     </p>
 
+    <div id="message"></div>
+
     <script type="text/javascript">
         var words = ["me", "people", "history", "way", "art", "world", "information", "map",
                      "two", "family", "government", "health", "system", "computer",
@@ -84,9 +89,24 @@
                      "education", "math", "moment", "painting", "politics", "attention",
                      "decision", "event", "property", "shopping", "student", "wood"];
 
+        function appendMessage (msg) {
+            var div = document.getElementById("message");
+            var item = document.createElement('div');
+            item.innerHTML = msg;
+            div.appendChild(item);
+        };
+
         rComplete(document.getElementById('simple'), {
             placeholder: "Simple placeholder"
-        }).setOptions(words);
+        }).setOptions(words).on("change", function() {
+            appendMessage("I changed.");
+        }).on("complete", function() {
+            appendMessage("I complete.");
+        }).on("focus", function() {
+            appendMessage("I focus.");
+        }).on("leave", function() {
+            appendMessage("I leave");
+        });
      </script>
 </body>
 </html>
