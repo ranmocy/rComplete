@@ -115,6 +115,9 @@
             Leave: function() {
                 this.removeClass('hovered');
             },
+            onclick: function() {
+                this.onmousedown();
+            },
             onmouseover: function() {
                 this.Hover();
             },
