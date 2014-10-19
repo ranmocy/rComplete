@@ -126,7 +126,6 @@
             },
             onmousedown: function() {
                 input.Complete(this.textContent);
-                setTimeout(function() { input.focus(); }, 0);  // for IE
             }
         });
 
