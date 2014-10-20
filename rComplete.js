@@ -1,5 +1,5 @@
 /**
- * rComplete 1.1.2
+ * rComplete 1.1.3
  * FYHPL: http://ranmocy.info/piece/FYHPL.txt
  * Copyright (c) 2014 Ranmocy Sheng
  * Be good.
