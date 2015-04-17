@@ -1,5 +1,5 @@
 /**
- * rComplete 1.2.0
+ * rComplete 1.2.1
  * FYHPL: http://ranmocy.info/piece/FYHPL.txt
  * Copyright (c) 2014 Ranmocy Sheng
  * Be good.
@@ -318,7 +318,13 @@
         wrapper.appendChild(hint);
         wrapper.appendChild(input);
         wrapper.appendChild(dropdown);
-        root.appendChild(wrapper);
+        if (typeof root.append === 'function') {
+            // root is a jQuery object
+            root.append(wrapper);
+        } else {
+            // default is plain JS
+            root.appendChild(wrapper);
+        }
 
         // return the rComplete obj
         return {

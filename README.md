@@ -1,4 +1,4 @@
-rComplete 1.2.0
+rComplete 1.2.1
 ===============
 
 JavaScript auto-complete library, simple and beautiful.
@@ -9,7 +9,7 @@ No dependency on any other library.
 Only **4.4K** minified!
 
 See
-[SourceCode(12K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.2.0/rComplete.js)
+[SourceCode(12K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.2.1/rComplete.js)
 or
 [Minified(4.4K)](https://rawgit.com/ranmocy/rComplete/master/rComplete.min.js)
 
