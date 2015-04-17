@@ -1,5 +1,5 @@
 /**
- * rComplete 1.1.3
+ * rComplete 1.2.0
  * FYHPL: http://ranmocy.info/piece/FYHPL.txt
  * Copyright (c) 2014 Ranmocy Sheng
  * Be good.
@@ -357,7 +357,7 @@
                         input.onblurCallback = callback;
                         break;
                     default:
-                        console.warn(name + " is not a vaid event name!");
+                        console.error(name + " is not a vaid event name!");
                 }
                 return this;
             }

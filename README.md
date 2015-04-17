@@ -1,4 +1,4 @@
-rComplete 1.1.3
+rComplete 1.2.0
 ===============
 
 JavaScript auto-complete library, simple and beautiful.
@@ -6,12 +6,12 @@ JavaScript auto-complete library, simple and beautiful.
 Easy to use, easy to costumize, easy to hack.
 
 No dependency on any other library.
-Only **4.6K** for production!
+Only **4.4K** minified!
 
 See
-[Development(11K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.1.3/rComplete.js)
+[SourceCode(12K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.2.0/rComplete.js)
 or
-[Production(4.6K)](https://cdn.rawgit.com/ranmocy/rComplete/v1.1.3/rComplete.min.js)
+[Minified(4.4K)](https://cdn.rawgit.com/ranmocy/rComplete/v1.2.0/rComplete.min.js)
 
 ## Demo
 
@@ -22,7 +22,7 @@ Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
 Add to your HTML header:
 
 ```HTML
-<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.1.3/rComplete.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.2.0/rComplete.min.js"></script>
 ```
 
 And enable auto complete:
