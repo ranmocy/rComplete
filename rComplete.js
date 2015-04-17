@@ -22,19 +22,19 @@
                 self[name].bindProperties(properties[name]);
             } else {
                 self[name] = properties[name];
-            };
+            }
         });
         return this;
     };
     HTMLElement.prototype.classes = function() {
         return this.className.split(/\s+/);
-    }
+    };
     HTMLElement.prototype.addClass = function(name) {
         var classes = this.classes();
         if (classes.indexOf(name) === -1) {
             classes.push(name);
             this.className = classes.join(' ');
-        };
+        }
         return this;
     };
     HTMLElement.prototype.removeClass = function(name) {
@@ -53,7 +53,7 @@
         Object.keys(user_config).forEach(function(key) {
             config[key] = user_config[key];
         });
-    };
+    }
 
     // create elements
     var wrapper = document.createElement('div').bindProperties({
@@ -148,7 +148,7 @@
             var index = this.Index + offset;
             if ((0 <= index) && (index < this.childNodes.length)) {
                 this.Index = index;
-            };
+            }
             this.CurrentItem().Hover();
         },
         Render: function(matches) {
@@ -163,18 +163,18 @@
 
             if (this.childNodes.length <= 1) {
                 this.Hide();
-            };
+            }
         },
         LeaveAllItem: function() {
             // node list is not array, so I can't use forEach
             for (var i = 0; i < this.childNodes.length; i++) {
                 this.childNodes[i].Leave();
-            };
+            }
         },
         Show: function() {
             if (this.childNodes.length > 1) {
                 this.style.display = null;
-            };
+            }
         },
         Hide: function() {
             this.style.display = 'none';
@@ -191,7 +191,7 @@
                 this.value = config.placeholder;
             } else {
                 this.style.display = 'none';
-            };
+            }
         },
         isShow: function() {
             return !this.isHide();
@@ -224,7 +224,7 @@
             hint.Render(this.Matches[0]);
             if (dropdown.childNodes[0]) {
                 dropdown.childNodes[0].Hover();
-            };
+            }
         },
         oncompleteCallback: function() {
             // User defined function
@@ -290,7 +290,7 @@
                         // disable jump out(default action) for the first time
                         event.preventDefault();
                         event.stopPropagation();
-                    };
+                    }
                     break;
                 case 33: // page up
                 case 34: // page down
@@ -311,9 +311,9 @@
                         // disable submit(default action) for the first time
                         event.preventDefault();
                         event.stopPropagation();
-                    };
+                    }
                     return;
-            };
+            }
         }
     });
 
@@ -365,4 +365,4 @@
             return this;
         }
     };
-};
+}
