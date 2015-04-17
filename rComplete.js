@@ -4,45 +4,43 @@
  * Copyright (c) 2014 Ranmocy Sheng
  * Be good.
  **/
- (function(window, document, undefined) {
+ (function(window, document) {
      function rComplete (root, user_config) {
         "use strict";
 
         // helpers
-        Object.prototype.bindFunctions = function(functions) {
-            var self = this;
+        function bindFunctions(self, functions) {
             Object.keys(functions).forEach(function(name) {
                 self[name] = functions[name].bind(self);
             });
-            return this;
-        };
-        Object.prototype.bindProperties = function(properties) {
-            var self = this;
+            return self;
+        }
+        function bindProperties(self, properties) {
             Object.keys(properties).forEach(function(name) {
                 if (properties[name].constructor === Object) { // it's a hash
-                    self[name].bindProperties(properties[name]);
+                    bindProperties(self[name], properties[name]);
                 } else {
                     self[name] = properties[name];
                 }
             });
-            return this;
-        };
-        HTMLElement.prototype.classes = function() {
-            return this.className.split(/\s+/);
-        };
-        HTMLElement.prototype.addClass = function(name) {
-            var classes = this.classes();
+            return self;
+        }
+        function getClasses(self) {
+            return self.className.split(/\s+/);
+        }
+        function addClass(self, name) {
+            var classes = getClasses(self);
             if (classes.indexOf(name) === -1) {
                 classes.push(name);
-                this.className = classes.join(' ');
+                self.className = classes.join(' ');
             }
-            return this;
-        };
-        HTMLElement.prototype.removeClass = function(name) {
+            return self;
+        }
+        function removeClass(self, name) {
             var re = new RegExp(name, "i");
-            this.className = this.className.replace(re, '').replace(/\s+/, ' ');
-            return this;
-        };
+            self.className = self.className.replace(re, '').replace(/\s+/, ' ');
+            return self;
+        }
 
         // default configs
         var config = {
@@ -57,14 +55,14 @@
         }
 
         // create elements
-        var wrapper = document.createElement('div').bindProperties({
+        var wrapper = bindProperties(document.createElement('div'), {
             className: "complete-wrapper",
             style: {
                 position: 'relative'
             }
         });
 
-        var input = document.createElement('input').bindProperties({
+        var input = bindProperties(document.createElement('input'), {
             className: "complete-input",
             type: 'text',
             value: '',
@@ -79,7 +77,7 @@
             }
         });
 
-        var hint = input.cloneNode().bindProperties({
+        var hint = bindProperties(input.cloneNode(), {
             className: "complete-hint",
             disabled: true,
             value: config.placeholder,
@@ -89,7 +87,7 @@
             }
         });
 
-        var dropdown = document.createElement('div').bindProperties({
+        var dropdown = bindProperties(document.createElement('div'), {
             className: 'complete-dropdown',
             Index: 0,
             style: {
@@ -99,22 +97,20 @@
 
 
         // create methods
-
-        // DropdownItem factory
-        var DropdownItem = function() {
+        function createDropdownItem() {
             var item = document.createElement('div');
             item.className = 'complete-dropdown-item';
 
-            item.bindFunctions({
+            bindFunctions(item, {
                 Hover: function() {
                     // all items should leave now
                     dropdown.LeaveAllItem();
-                    this.addClass('hovered');
+                    addClass(this, 'hovered');
                     // update hint
                     hint.Render(this.textContent);
                 },
                 Leave: function() {
-                    this.removeClass('hovered');
+                    removeClass(this, 'hovered');
                 },
                 onclick: function() {
                     this.onmousedown();
@@ -131,9 +127,9 @@
             });
 
             return item;
-        };
+        }
 
-        dropdown.bindFunctions({
+        bindFunctions(dropdown, {
             Empty: function() {
                 while (this.firstChild) {
                     this.removeChild(this.firstChild);
@@ -157,7 +153,7 @@
 
                 var self = this;
                 matches.forEach(function(d) {
-                    var item = DropdownItem();
+                    var item = createDropdownItem();
                     item.innerHTML = d;
                     self.appendChild(item);
                 });
@@ -182,7 +178,7 @@
             }
         });
 
-        hint.bindFunctions({
+        bindFunctions(hint, {
             Show: function() {
                 this.style.display = null;
             },
@@ -207,7 +203,7 @@
             }
         });
 
-        input.bindFunctions({
+        bindFunctions(input, {
             // update matches options
             Match: function() {
                 var self = this;
