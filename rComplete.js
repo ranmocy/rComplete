@@ -367,4 +367,19 @@
             }
         };
     }
+
+    // expose to the global object
+    window.rComplete = rComplete;
+
+    // expose as a common js module
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = rComplete;
+    }
+
+    // expose rComplete as an AMD module
+    if (typeof define === 'function' && define.amd) {
+        define(function() {
+            return rComplete;
+        });
+    }
 }) (window, document);
