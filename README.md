@@ -11,7 +11,7 @@ Only **4.4K** minified!
 See
 [SourceCode(12K)](https://raw.githubusercontent.com/ranmocy/rComplete/v1.2.0/rComplete.js)
 or
-[Minified(4.4K)](https://cdn.rawgit.com/ranmocy/rComplete/v1.2.0/rComplete.min.js)
+[Minified(4.4K)](https://rawgit.com/ranmocy/rComplete/master/rComplete.min.js)
 
 ## Demo
 
@@ -22,7 +22,7 @@ Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
 Add to your HTML header:
 
 ```HTML
-<script type="text/javascript" src="https://cdn.rawgit.com/ranmocy/rComplete/v1.2.0/rComplete.min.js"></script>
+<script type="text/javascript" src="https://rawgit.com/ranmocy/rComplete/master/rComplete.min.js"></script>
 ```
 
 And enable auto complete:
