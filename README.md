@@ -15,7 +15,7 @@ or
 
 ## Demo
 
-Check out the [Demo](http://complete.ranmocy.info/demo.html) here.
+Check out the [Demo](https://ranmocy.github.io/rComplete/demo) here.
 
 ## Usage
 
